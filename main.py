@@ -3,6 +3,15 @@ from yolo_model import YoloHeatMap
 from imutils.video import VideoStream
 from skimage.transform import resize
 import numpy as np
+import argparse
+
+parser = argparse.ArgumentParser(description= "Process video with YOLO and heatmap")
+parser.add_argument('--video', type = str, default="video.store video.mp4", help = 'Path to the input video file')
+parser.add_argument('--model', type = str, default = 'yolov8n.pt', help = 'Path to YOLO model file')
+args = parser.parse_args()
+
+video_file = args.video
+model_file = args.model
 
 alpha = 0.4
 video_height = 640
@@ -11,10 +20,10 @@ cell_size = 40
 num_cols = video_width// cell_size
 num_rows = video_height// cell_size
 
-custom_model = YoloHeatMap("yolov8n.pt", num_rows, num_cols, cell_size)
+custom_model = YoloHeatMap(model_file, num_rows, num_cols, cell_size)
 
 
-video_file = "video/store video.mp4"
+
 video = cv2.VideoCapture(video_file)
 #video = VideoStream(video_file).start()
 
