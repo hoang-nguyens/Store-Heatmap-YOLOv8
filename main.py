@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description= "Process video with YOLO and heatmap")
 parser.add_argument('--video', type = str, default="video.store video.mp4", help = 'Path to the input video file')
-parser.add_argument('--model', type = str, default = 'yolov8n.pt', help = 'Path to YOLO model file')
+parser.add_argument('--model', type = str, default = 'yolov8s.pt', help = 'Path to YOLO model file')
 args = parser.parse_args()
 
 video_file = args.video
