@@ -2,3 +2,5 @@ torch
 opencv-python
 scikit-image
 ultralytics
+numpy
+imutils

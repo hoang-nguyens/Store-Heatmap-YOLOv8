@@ -22,7 +22,7 @@ class YoloHeatMap:
         self.cell_size = cell_size
 
     def detection(self,is_show = False, image = None):
-        result = self.yolo.predict(show = is_show, source = image, classes = [0])
+        result = self.yolo.predict(show = is_show, source = image)#, classes = [0])
 
         boxes = []
         classes = []
@@ -44,7 +44,7 @@ class YoloHeatMap:
     def draw_prediction(self, image, x_top, y_top, x_bottom, y_bottom, cls, name): # pass integer x, y
         color = self.COLORS[int(cls)]
         cv2.rectangle(image, (x_top, y_top), (x_bottom, y_bottom), color, 2)
-        cv2.putText(image, name, (x_top, y_top), cv2.FONT_HERSHEY_PLAIN, 0.5,color,2)
+        cv2.putText(image, name, (x_top, y_top), cv2.FONT_HERSHEY_PLAIN, 1,color,2)
 
 
     def heat_increase(self, x_top, y_top, x_bottom, y_bottom): # pass integer x, y
