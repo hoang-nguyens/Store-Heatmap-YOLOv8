@@ -1,18 +1,9 @@
-import torch
 from ultralytics import YOLO
 import cv2
 import numpy as np
 
-'''
-yolo = YOLO("yolov8n.pt")
 
-result = yolo.predict(show = True,source = "video/istockphoto-1614058752-170667a.webp", classes = [0])
 
-print(result)
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-'''
 
 class YoloHeatMap:
     def __init__(self, model, num_rows, num_cols, cell_size):
@@ -54,10 +45,3 @@ class YoloHeatMap:
         col = x_center // self.cell_size
         self.heat_matrix[row, col] +=1
 
-'''
-test = YoloHeatMap("yolov8n.pt",1,1)
-detect = test.detection(image="video/istockphoto-1614058752-170667a.webp")[0][0][1]
-print(detect)
-#yolo = YOLO('yolov8n.pt')
-#result = yolo.track(source = "video/store video.mp4", show = True)
-'''
