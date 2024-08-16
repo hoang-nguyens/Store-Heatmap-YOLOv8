@@ -6,7 +6,6 @@ We use YOLOv8 for object dectection, then divide the frames into grid and calcul
 
 https://github.com/user-attachments/assets/71dab92c-f9c7-4f9a-9b20-0ef8e65c9c05
 
-<video src="https://github.com/hoang-nguyens/Store-Heatmap-YOLOv8/blob/main/demo/demo1.mp4" autoplay loop>
 
 ## How to use
 Run pip install -r requirement.txt<br>
