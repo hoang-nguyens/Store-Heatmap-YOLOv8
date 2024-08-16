@@ -4,4 +4,15 @@ In a store, some areas receive more customer traffic than others. We want to ide
 We use YOLOv8 for object dectection, then divide the frames into grid and calculate the time each cell is visited by customers. The color intensy of each cell increases based on the time spent by people in that area.
 
 
-[Demo video]("https://github.com/hoang-nguyens/Store-Heatmap-YOLOv8/blob/main/demo/demo1.mp4")
+[Demo video](https://github.com/hoang-nguyens/Store-Heatmap-YOLOv8/blob/main/demo/demo1.mp4)
+
+## How to use
+Run pip install -r requirement.txt<br>
+Run python main.py --video [your testing video] --model [your model/default is YOLOv8s]
+
+## Requirement
+* cv2<br>
+* python 3.12<br>
+* scikit-image<br>
+* ultralytics<br>
+* imutils
